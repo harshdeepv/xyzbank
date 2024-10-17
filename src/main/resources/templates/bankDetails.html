@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Greeting Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .greeting {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="greeting" th:text="${message}"></h1>
+    <table border="1">
+        <tr>
+            <td>
+                <button class="button" onclick="bank1()">XYZ_Bank Whitefield</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="button" onclick="bank2()">XYZ_Bank Sarjapur</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="button" onclick="bank3()">XYZ_Bank Yelhanka</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="button" onclick="bank4()">XYZ_Bank Yeswanthpur</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="button" onclick="bank5()">XYZ_Bank Marathalli</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="button" onclick="bank6()">XYZ_Bank Bellandur</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="button" onclick="bank7()">XYZ_Bank Belathur</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="button" onclick="bank8()">XYZ_Bank KR Puram</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="button" onclick="bank9()">XYZ_Bank Majestic</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="button" onclick="bank10()">XYZ_Bank MG Road</button>
+            </td>
+        </tr>
+    </table>
+    <button class="button" onclick="sayHello()">Say Hello</button>
+</div>
+
+<script>
+    function bank1(){
+        alert('This is XYX_Bank, Address:- Whitefield');
+    }
+    function bank2(){
+        alert('This is XYX_Bank, Address:- Sarjapur');
+    }
+    function bank3(){
+        alert('This is XYX_Bank, Address:- Yelhanka');
+    }
+    function bank4(){
+        alert('This is XYX_Bank, Address:- Yeswanthpur');
+    }
+    function bank5(){
+        alert('This is XYX_Bank, Address:- Marathalli');
+    }
+    function bank6(){
+        alert('This is XYX_Bank, Address:- Bellandur');
+    }
+    function bank7(){
+        alert('This is XYX_Bank, Address:- Belathur');
+    }
+    function bank8(){
+        alert('This is XYX_Bank, Address:- KR Puram');
+    }
+    function bank9(){
+        alert('This is XYX_Bank, Address:- Majestic');
+    }
+    function bank10(){
+        alert('This is XYX_Bank, Address:- MG Road');
+    }
+    function sayHello() {
+        alert('Hello, there!');
+    }
+</script>
+</body>
+</html>
