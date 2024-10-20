@@ -1,0 +1,41 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysqldb
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: bank_db
+      MYSQL_USER: youruser
+      MYSQL_PASSWORD: yourpassword
+    ports:
+      - "3307:3306"
+    networks:
+      - springboot-mysql-network
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Load init.sql for dummy data
+    restart: unless-stopped
+
+  springboot-app:
+    image: xyzbank
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    networks:
+      - springboot-mysql-network
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/bank_db
+      SPRING_DATASOURCE_USERNAME: youruser
+      SPRING_DATASOURCE_PASSWORD: yourpassword
+    restart: unless-stopped
+
+networks:
+  springboot-mysql-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
