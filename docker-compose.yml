@@ -8,12 +8,11 @@ services:
       MYSQL_USER: youruser
       MYSQL_PASSWORD: yourpassword
     ports:
-      - "3307:3306"
+      - "3306:3306"
     networks:
       - springboot-mysql-network
     volumes:
       - mysql-data:/var/lib/mysql
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql  # Load init.sql for dummy data
     restart: unless-stopped
 
   springboot-app:
